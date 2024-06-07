@@ -60,7 +60,6 @@ namespace Tp2AAT
             Console.WriteLine($"\nProducto '{producto.Nombre}' agregado al carrito ({cantidad} unidades).");
         }
 
-        
         public void EliminarProducto(string nombreProducto) {
             if(productosCarrito.Count == 0){
                 Console.WriteLine("El carrito esta vacio, no hay productos para eliminar.");
@@ -68,8 +67,6 @@ namespace Tp2AAT
             }
             productosCarrito.RemoveAll(i => i.producto.Nombre.Equals(nombreProducto, StringComparison.OrdinalIgnoreCase));
         }
-    
-        
 
         public float CalcularSubtotal() {
             float subtotal = 0;
@@ -88,7 +85,5 @@ namespace Tp2AAT
             Console.WriteLine($"Subtotal calculado: {subtotal:C}");
             return subtotal;
         }
-
-    
     }
 }
