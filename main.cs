@@ -80,7 +80,8 @@ namespace Tp2AAT
                         break;
     
                     case "8":
-                        Console.WriteLine($"\nDinero en caja: ${tienda.DineroEnCaja:F2}");
+                        float dinero = tienda.Dinero();
+                        Console.WriteLine($"\nDinero en caja: ${dinero:F2}");
                         break;
     
                     case "9":
