@@ -6,11 +6,15 @@ namespace Tp2AAT
     public class Tienda
     {
         public List<Producto> productos { get; private set; }
-        public float DineroEnCaja { get; private set; }
+        private float DineroEnCaja { get; private set; }
 
         public Tienda() {
             productos = new List<Producto>();
             DineroEnCaja = 0.0f;
+        }
+        
+        public float Dinero(){
+            return DineroEnCaja;
         }
 
         public void MostrarProductos() {
@@ -70,7 +74,6 @@ namespace Tp2AAT
                 DineroEnCaja += totalCompra;
                 float vuelto = dineroCliente - totalCompra;
                 Console.WriteLine($"Su vuelto es: {vuelto:C}");
-                Console.WriteLine($"Dinero en caja: {DineroEnCaja:C}");
                 return vuelto;
             } 
         }
