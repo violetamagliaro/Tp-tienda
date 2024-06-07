@@ -5,8 +5,8 @@ namespace Tp2AAT
 {
     public class Tienda
     {
-        public List<Producto> productos { get; private set; }
-        private float DineroEnCaja { get; private set; }
+        private List<Producto> productos { get; set; }
+        private float DineroEnCaja { get; set; }
 
         public Tienda() {
             productos = new List<Producto>();
