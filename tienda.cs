@@ -13,7 +13,6 @@ namespace Tp2AAT
             DineroEnCaja = 0.0f;
         }
 
-
         public void MostrarProductos() {
             Console.WriteLine("\nProductos en la tienda: ");
             Console.WriteLine("-------------------------------");
@@ -56,12 +55,10 @@ namespace Tp2AAT
             productos.RemoveAll(p => p.Nombre.Equals(nombreProducto, StringComparison.OrdinalIgnoreCase));
         }
 
-        public Producto BuscarProductoPorNombre(string nombre)
-        {
+        public Producto BuscarProductoPorNombre(string nombre) {
             return productos.Find(p => p.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase));
         }
         
-
         public float Cobrar(float totalCompra) {
             Console.Write("Ingrese la cantidad de dinero con la que va a pagar: ");
             float dineroCliente = float.Parse(Console.ReadLine());
@@ -77,6 +74,5 @@ namespace Tp2AAT
                 return vuelto;
             } 
         }
-
     }
 }
