@@ -12,9 +12,16 @@ namespace Tp2AAT
             productos = new List<Producto>();
             DineroEnCaja = 0.0f;
         }
-        
+
         public float Dinero(){
             return DineroEnCaja;
+        }
+
+        public int isEmptyTienda(){
+            if(productos.Count == 0){
+                return 0 ;
+            }
+            return 1;
         }
 
         public void MostrarProductos() {
@@ -59,10 +66,12 @@ namespace Tp2AAT
             productos.RemoveAll(p => p.Nombre.Equals(nombreProducto, StringComparison.OrdinalIgnoreCase));
         }
 
-        public Producto BuscarProductoPorNombre(string nombre) {
+        public Producto BuscarProductoPorNombre(string nombre)
+        {
             return productos.Find(p => p.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase));
         }
         
+
         public float Cobrar(float totalCompra) {
             Console.Write("Ingrese la cantidad de dinero con la que va a pagar: ");
             float dineroCliente = float.Parse(Console.ReadLine());
@@ -71,8 +80,8 @@ namespace Tp2AAT
                 Console.WriteLine("Dinero insuficiente para completar la compra.");   
                 return 0;
             } else {
-                DineroEnCaja += totalCompra;
                 float vuelto = dineroCliente - totalCompra;
+                DineroEnCaja += totalCompra;
                 Console.WriteLine($"Su vuelto es: {vuelto:C}");
                 return vuelto;
             } 
