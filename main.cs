@@ -40,10 +40,16 @@ namespace Tp2AAT
                         break;
     
                     case "3":
-                        Console.Write("\nIngrese el nombre del producto a eliminar: ");
-                        string nombreEliminar = Console.ReadLine(); 
-                        tienda.EliminarProducto(nombreEliminar);
-                        carrito.EliminarProducto(nombreEliminar);
+                        if((tienda.isEmptyTienda())==1){
+                            tienda.MostrarProductos(); 
+                            Console.Write("\nIngrese el nombre del producto a eliminar: ");
+                            string nombreEliminar = Console.ReadLine();
+                            tienda.EliminarProducto(nombreEliminar);
+                            carrito.EliminarProducto(nombreEliminar);
+                            Console.WriteLine($"\n'{nombreEliminar}' se ha eliminado de la tienda.");
+                        } else {
+                             Console.WriteLine("\nLa tienda esta vacia, no hay productos para eliminar.");
+                        }
                         break;
                   
                     case "4":
@@ -66,9 +72,15 @@ namespace Tp2AAT
                         break;
     
                     case "6":
-                        Console.Write("\nIngrese el nombre del producto que desea eliminar del carrito: ");
-                        string nombreEliminarCarrito = Console.ReadLine();
-                        carrito.EliminarProducto(nombreEliminarCarrito);
+                        if((carrito.isEmptyCarrito())==1){
+                            carrito.MostrarCarrito(); 
+                            Console.Write("\nIngrese el nombre del producto que desea eliminar del carrito: ");
+                            string nombreEliminarCarrito = Console.ReadLine();
+                            carrito.EliminarProducto(nombreEliminarCarrito);
+                            Console.WriteLine($"\n'{nombreEliminarCarrito}' se ha eliminado del carrito.");
+                        } else {
+                            Console.WriteLine("\nEl carrito esta vacio, no hay productos para eliminar.");
+                        }
                         break;
     
                     case "7":
